@@ -1,0 +1,31 @@
+{
+  "name": "capstone-project-blog",
+  "version": "1.0.0",
+  "description": "A simple blog made with Node.js, Express and EJS.",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiLourinho/cp-blog.git"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "express",
+    "ejs"
+  ],
+  "author": "Tiago Lourinho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TiLourinho/cp-blog/issues"
+  },
+  "homepage": "https://github.com/TiLourinho/cp-blog#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
