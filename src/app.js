@@ -1,12 +1,8 @@
 import express from "express";
 
+import { PORT } from "./config/constants.js";
+import { serverStart } from "./utils/tools.js";
+
 const app = express();
-const PORT = 3000;
 
-app.listen(PORT, (err) => {
-  if (err) {
-    console.log(`Error in server setup => ${err}`);
-  }
-
-  console.log(`Server listening on port ${PORT}`);
-});
+app.listen(PORT, (err) => serverStart(err, PORT));
