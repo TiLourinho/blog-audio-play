@@ -1,7 +1,7 @@
 <%- include("partials/header") %>
-  <main class="d-flex flex-column justify-content-start align-items-center w-50">
+  <main class="d-flex flex-column justify-content-center align-items-center w-50">
     <p class="h3">Create Post</p>
-    <form class="w-75" action="/submit" method="POST">
+    <form class="w-75" action="/" method="POST">
       <div class="d-flex flex-column mb-3">
         <label class="form-label" for="title">title</label>
         <input class="form-control" type="text" name="title" id="title" minlength="2" maxlength="45" autofocus required />
@@ -9,6 +9,9 @@
       <div class="d-flex flex-column">
         <label class="form-label" for="content">content</label>
         <textarea class="form-control" name="content" id="content" style="height: 100px" required></textarea>
+      </div>
+      <div class="d-flex flex-column mt-5">
+        <button type="submit" class="btn btn-light">Submit</button>
       </div>
     </form>
   </main>
