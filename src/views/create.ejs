@@ -1,33 +1,11 @@
-<!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Play</title>
-    <link rel="stylesheet" href="/styles/main.css">
-  </head>
-  <body>
-    <header>
-      <h1>Audio Play</h1>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>New Post</li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h1>Create Post</h1>
-      <form action="/submit" method="POST">
-        <label for="title">title</label>
-        <input type="text" name="title" id="title" minlength="2" maxlength="45" autofocus required />
-        <label for="content">content</label>
-        <textarea name="content" id="content" required></textarea>
-      </form>
-    </main>
-    <footer>
-      <p>© 2025 Tiago Lourinho. Todos os direitos reservados.</p>
-      <p>Feito com Node.js, Express e EJS.</p>
-    </footer>
-  </body>
-</html>
+<%- include("partials/header") %>
+  <main>
+    <h1>Create Post</h1>
+    <form action="/submit" method="POST">
+      <label for="title">title</label>
+      <input type="text" name="title" id="title" minlength="2" maxlength="45" autofocus required />
+      <label for="content">content</label>
+      <textarea name="content" id="content" required></textarea>
+    </form>
+  </main>
+<%- include("partials/footer") %>
