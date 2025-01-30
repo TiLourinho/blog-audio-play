@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  line-height: 1;
-  font-family: sans-serif;
+  line-height: 1.5;
+  width: 100vw;
 }
 
 ul,
@@ -25,7 +27,20 @@ button {
   cursor: pointer;
 }
 
-img {
-  height: auto;
-  max-width: 100%;
+header p {
+  font-family: "Orbitron", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+main p {
+  font-family: "Michroma", serif;
+  font-weight: 400;
+}
+
+footer p {
+  font-family: "Zain", serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 300;
 }
