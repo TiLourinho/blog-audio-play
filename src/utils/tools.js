@@ -53,3 +53,33 @@ export function viewPost(req, res) {
 
   return data;
 }
+
+export function updatePost(path, content) {
+  readFile(path, (err, data) => {
+    const parsedData = JSON.parse(data);
+
+    if (err) {
+      console.error("Error reading file:", err);
+      return;
+    }
+
+    parsedData.map((item) => {
+      if (item.id === Number(content.id)) {
+        item.id = item.id;
+        item.title = content.title;
+        item.content = content.content;
+      }
+    });
+
+    const updatedData = [...parsedData];
+    const stringfiedData = JSON.stringify(updatedData, null, 2);
+
+    writeFile(path, stringfiedData, (err) => {
+      if (err) {
+        console.error("Error writing file:", err);
+      }
+
+      console.log("File written successfully!");
+    });
+  });
+}
