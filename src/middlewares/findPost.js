@@ -1,7 +1,7 @@
 import { readPost } from "../utils/tools.js";
 import { POSTS_PATH } from "../config/constants.js";
 
-export function viewPost(_req, res, next) {
+export function findPost(_req, res, next) {
   const locals = res.locals;
 
   try {

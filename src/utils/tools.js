@@ -42,3 +42,14 @@ export function readPost(path) {
     throw error;
   }
 }
+
+export function viewPost(req, res) {
+  const postTitle = req.params.title;
+  const allPosts = res.locals.posts;
+  const post = allPosts.filter((item) => item.title === postTitle);
+  const data = {
+    post: post[0],
+  };
+
+  return data;
+}
