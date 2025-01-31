@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+  <main class="d-flex flex-column justify-content-center align-items-center w-75">
+    <form class="w-auto" action="/delete" method="POST">
+      <input type="hidden" name="id" value="<%= post.id %>">
+      <div class="d-flex flex-column justify-content-center align-items-center gap-3">
+        <p class="m-0"><%= post.title %></p>
+        <p class="m-0"><%= post.content %></p>
+      </div>
+      <p class="m-4">Are you sure you want to remove this post?</p>
+      <div class="d-flex flex-row justify-content-center align-items-center mt-4 gap-3">
+        <button class="btn btn-danger" type="submit">Yes</button>
+        <a href="/post/<%= post.title %>">
+          <button class="btn btn-light" type="button">No</button>
+        </a>
+      </div>
+    </form>
+  </main>
+<%- include("partials/footer") %>

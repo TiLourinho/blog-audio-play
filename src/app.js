@@ -1,7 +1,12 @@
 import express from "express";
 
 import { PORT, VIEWS_DIR, PUBLIC_DIR, POSTS_PATH } from "./config/constants.js";
-import { serverStart, savePost, updatePost } from "./utils/tools.js";
+import {
+  serverStart,
+  savePost,
+  updatePost,
+  removePost,
+} from "./utils/tools.js";
 import { createPost } from "./middlewares/createPost.js";
 import { findPost } from "./middlewares/findPost.js";
 import { viewPost } from "./utils/tools.js";
@@ -47,6 +52,19 @@ app.post("/update", (req, res) => {
   const post = req.body;
 
   updatePost(POSTS_PATH, post);
+  res.redirect("/");
+});
+
+app.get("/delete/:title", (req, res) => {
+  const data = viewPost(req, res);
+
+  res.render("delete", data);
+});
+
+app.post("/delete", (req, res) => {
+  const post = req.body;
+
+  removePost(POSTS_PATH, post);
   res.redirect("/");
 });
 

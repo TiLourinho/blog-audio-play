@@ -83,3 +83,29 @@ export function updatePost(path, content) {
     });
   });
 }
+
+export function removePost(path, content) {
+  readFile(path, (err, data) => {
+    const parsedData = JSON.parse(data);
+    console.log(content);
+    if (err) {
+      console.error("Error reading file:", err);
+      return;
+    }
+
+    const reducedData = parsedData.filter(
+      (item) => item.id !== Number(content.id)
+    );
+
+    const updatedData = [...reducedData];
+    const stringfiedData = JSON.stringify(updatedData, null, 2);
+
+    writeFile(path, stringfiedData, (err) => {
+      if (err) {
+        console.error("Error writing file:", err);
+      }
+
+      console.log("File written successfully!");
+    });
+  });
+}
