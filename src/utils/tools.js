@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "fs";
+import { readFile, readFileSync, writeFile } from "fs";
 
 export function serverStart(error, port) {
   if (error) {
@@ -27,4 +27,18 @@ export function savePost(path, content) {
       console.log("File written successfully!");
     });
   });
+}
+
+export function readPost(path) {
+  try {
+    const data = readFileSync(path);
+    const parsedData = JSON.parse(data.toString());
+    const stringfiedData = JSON.stringify(parsedData);
+
+    return stringfiedData;
+  } catch (error) {
+    console.error("Error reading file:", error);
+
+    throw error;
+  }
 }

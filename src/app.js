@@ -3,6 +3,7 @@ import express from "express";
 import { PORT, VIEWS_DIR, PUBLIC_DIR, POSTS_PATH } from "./config/constants.js";
 import { serverStart, savePost } from "./utils/tools.js";
 import { createPost } from "./middlewares/createPost.js";
+import { viewPost } from "./middlewares/viewPost.js";
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.set("views", VIEWS_DIR);
 app.use(express.static(PUBLIC_DIR));
 app.use(express.urlencoded({ extended: true }));
 app.use(createPost);
+app.use(viewPost);
 
 app.get("/", (_req, res) => {
   res.render("home");
