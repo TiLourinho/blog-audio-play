@@ -2,29 +2,29 @@ import { readFile, readFileSync, writeFile } from "fs";
 
 export function serverStart(error, port) {
   if (error) {
-    console.log(`Error in server setup => ${err}`);
+    console.log(`Error in server setup => ${error}`);
   }
 
   console.log(`Server listening on port ${port}`);
 }
 
 export function savePost(path, content) {
-  readFile(path, (err, data) => {
+  readFile(path, (error, data) => {
     const parsedData = JSON.parse(data);
     const updatedData = [...parsedData, content];
     const stringfiedData = JSON.stringify(updatedData, null, 2);
 
-    if (err) {
-      console.error("Error reading file:", err);
+    if (error) {
+      console.error("Error reading file while saving post:", error);
       return;
     }
 
-    writeFile(path, stringfiedData, (err) => {
-      if (err) {
-        console.error("Error writing file:", err);
+    writeFile(path, stringfiedData, (error) => {
+      if (error) {
+        console.error("Error writing file while saving post:", error);
       }
 
-      console.log("File written successfully!");
+      console.log("File saved successfully!");
     });
   });
 }
@@ -37,16 +37,16 @@ export function readPost(path) {
 
     return stringfiedData;
   } catch (error) {
-    console.error("Error reading file:", error);
+    console.error("Error reading post:", error);
 
     throw error;
   }
 }
 
 export function viewPost(req, res) {
-  const postTitle = req.params.title;
+  const postId = req.params.id;
   const allPosts = res.locals.posts;
-  const post = allPosts.filter((item) => item.title === postTitle);
+  const post = allPosts.filter(({ id }) => id === Number(postId));
   const data = {
     post: post[0],
   };
@@ -54,58 +54,56 @@ export function viewPost(req, res) {
   return data;
 }
 
-export function updatePost(path, content) {
-  readFile(path, (err, data) => {
+export function updatePost(path, body) {
+  readFile(path, (error, data) => {
     const parsedData = JSON.parse(data);
 
-    if (err) {
-      console.error("Error reading file:", err);
+    if (error) {
+      console.error("Error reading file while updating post:", error);
       return;
     }
 
     parsedData.map((item) => {
-      if (item.id === Number(content.id)) {
+      if (item.id === Number(body.id)) {
         item.id = item.id;
-        item.title = content.title;
-        item.content = content.content;
+        item.title = body.title;
+        item.content = body.content;
       }
     });
 
     const updatedData = [...parsedData];
     const stringfiedData = JSON.stringify(updatedData, null, 2);
 
-    writeFile(path, stringfiedData, (err) => {
-      if (err) {
-        console.error("Error writing file:", err);
+    writeFile(path, stringfiedData, (error) => {
+      if (error) {
+        console.error("Error writing file while updating post:", error);
       }
 
-      console.log("File written successfully!");
+      console.log("File updated successfully!");
     });
   });
 }
 
-export function removePost(path, content) {
-  readFile(path, (err, data) => {
+export function removePost(path, body) {
+  readFile(path, (error, data) => {
     const parsedData = JSON.parse(data);
-    console.log(content);
-    if (err) {
-      console.error("Error reading file:", err);
+
+    if (error) {
+      console.error("Error reading file while removing post:", error);
       return;
     }
 
-    const reducedData = parsedData.filter(
-      (item) => item.id !== Number(content.id)
-    );
+    const reducedData = parsedData.filter(({ id }) => id !== Number(body.id));
 
     const updatedData = [...reducedData];
     const stringfiedData = JSON.stringify(updatedData, null, 2);
 
-    writeFile(path, stringfiedData, (err) => {
-      if (err) {
-        console.error("Error writing file:", err);
+    writeFile(path, stringfiedData, (error) => {
+      if (error) {
+        console.error("Error writing file while removing post:", error);
       }
 
-      console.log("File written successfully!");
+      console.log("File removed successfully!");
     });
   });
 }

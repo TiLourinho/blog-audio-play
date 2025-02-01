@@ -36,13 +36,13 @@ app.get("/create", (_req, res) => {
   res.render("create");
 });
 
-app.get("/post/:title", (req, res) => {
+app.get("/post/:id", (req, res) => {
   const data = viewPost(req, res);
 
   res.render("post", data);
 });
 
-app.get("/update/:title", (req, res) => {
+app.get("/update/:id", (req, res) => {
   const data = viewPost(req, res);
 
   res.render("edit", data);
@@ -55,7 +55,7 @@ app.post("/update", (req, res) => {
   res.redirect("/");
 });
 
-app.get("/delete/:title", (req, res) => {
+app.get("/delete/:id", (req, res) => {
   const data = viewPost(req, res);
 
   res.render("delete", data);

@@ -6,10 +6,10 @@
         <p class="m-0"><%= post.title %></p>
         <p class="m-0"><%= post.content %></p>
       </div>
-      <p class="m-4">Are you sure you want to remove this post?</p>
+      <p class="text-center mt-5">Are you sure you want to remove this post?</p>
       <div class="d-flex flex-row justify-content-center align-items-center mt-4 gap-3">
         <button class="btn btn-danger" type="submit">Yes</button>
-        <a href="/post/<%= post.title %>">
+        <a href="/post/<%= post.id %>">
           <button class="btn btn-light" type="button">No</button>
         </a>
       </div>
