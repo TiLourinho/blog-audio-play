@@ -7,8 +7,27 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fe0072;
+  background: radial-gradient(
+    circle,
+    #fe0072 0%,
+    #a90258 0%,
+    #47053a 60%,
+    #12062a 100%
+  );
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f7f7f7;
   line-height: 1.5;
-  width: 100vw;
+  margin-left: 25vw;
+  margin-right: 25vw;
+  height: 100vh;
+  width: 50vw;
 }
 
 ul,
@@ -27,21 +46,72 @@ button {
   cursor: pointer;
 }
 
-header p {
-  font-family: "Orbitron", serif;
-  font-size: 1.2rem;
-  font-weight: 600;
+.container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-main p {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
+.container-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-footer p {
-  font-family: "Zain", serif;
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 300;
+.create {
+  margin-top: 115px;
+  height: 100vh;
+  width: inherit;
+
+  & p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 0.8rem;
+    width: 60%;
+
+    & label {
+      font-family: "Zain", serif;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    & input,
+    textarea {
+      border: none;
+      font-size: 1rem;
+      padding: 0.5rem;
+      height: 2rem;
+      width: 450px;
+    }
+
+    & button {
+      border: none;
+      border-radius: 1.5rem;
+      background: #f7f7f7;
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      transition: 0.5s;
+    }
+
+    & button:hover {
+      background: linear-gradient(#ff5734, #fe0072);
+      box-shadow: 2px 2px 2px 0 #12062a;
+      color: #f7f7f7;
+    }
+  }
 }

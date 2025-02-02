@@ -3,8 +3,10 @@ export function createPost(req, res, next) {
   const locals = res.locals;
   const data = {
     id: body.id,
+    artist: body.artist,
     title: body.title,
-    content: body.content,
+    coverUrl: body.coverUrl,
+    description: body.description,
   };
 
   locals["data"] = data;

@@ -1,15 +1,31 @@
 <%- include("partials/header") %>
-  <main>
+  <main class="container-column create">
     <p>Create Post</p>
     <form action="/" method="POST">
-      <!-- TODO - Hidden input -->
+      <input type="hidden" name="id" value="<%= uid %>" />
       <div>
-        <label for="title">title</label>
-        <input type="text" name="title" id="title" minlength="2" maxlength="45" autofocus required />
+        <div>
+          <label for="artist">artist</label>
+        </div>
+        <input type="text" name="artist" id="artist" minlength="2" maxlength="45" autofocus required />
       </div>
       <div>
-        <label for="content">content</label>
-        <textarea name="content" id="content" style="height: 100px" required></textarea>
+        <div>
+          <label for="title">album title</label>
+        </div>
+        <input type="text" name="title" id="title" minlength="2" maxlength="45" required />
+      </div>
+      <div>
+        <div>
+          <label for="url">image</label>
+        </div>
+        <input type="text" name="url" id="url" minlength="2" autofocus required />
+      </div>
+      <div>
+        <div>
+          <label for="content">description</label>
+        </div>
+        <textarea name="content" id="content" minlength="2" style="height: 100px" required></textarea>
       </div>
       <div>
         <button type="submit">Submit</button>

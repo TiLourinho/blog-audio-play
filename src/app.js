@@ -3,6 +3,7 @@ import express from "express";
 import { PORT, VIEWS_DIR, PUBLIC_DIR, POSTS_PATH } from "./config/constants.js";
 import {
   serverStart,
+  generateId,
   savePost,
   updatePost,
   removePost,
@@ -29,11 +30,13 @@ app.post("/", (req, res) => {
   const post = req.body;
 
   savePost(POSTS_PATH, post);
-  res.render("home");
+  res.redirect("/");
 });
 
 app.get("/create", (_req, res) => {
-  res.render("create");
+  const data = { uid: generateId() };
+
+  res.render("create", data);
 });
 
 app.get("/post/:id", (req, res) => {
