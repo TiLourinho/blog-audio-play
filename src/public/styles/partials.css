@@ -40,17 +40,17 @@ nav {
     gap: 0.7rem;
   }
 
-  & a,
-  a:after,
-  a:before {
+  & ul a,
+  ul a:after,
+  ul a:before {
     transition: all 0.5s;
   }
 
-  & a:hover {
+  & ul a:hover {
     color: #f4581e;
   }
 
-  & a:after {
+  & ul a:after {
     position: absolute;
     bottom: -4px;
     left: 0;
@@ -63,7 +63,7 @@ nav {
     height: 1px;
   }
 
-  & a:hover:after {
+  & ul a:hover:after {
     width: 100%;
   }
 }

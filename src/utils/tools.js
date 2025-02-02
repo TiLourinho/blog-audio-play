@@ -1,4 +1,5 @@
 import { readFile, readFileSync, writeFile } from "fs";
+import ShortUniqueId from "short-unique-id";
 
 export function serverStart(error, port) {
   if (error) {
@@ -6,6 +7,12 @@ export function serverStart(error, port) {
   }
 
   console.log(`Server listening on port ${port}`);
+}
+
+export function generateId() {
+  const uid = new ShortUniqueId({ length: 4 });
+
+  return uid.rnd();
 }
 
 export function savePost(path, content) {
