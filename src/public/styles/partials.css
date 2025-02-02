@@ -1,0 +1,85 @@
+header {
+  padding: 1rem 0 1rem 0;
+  position: fixed;
+  top: 0;
+  width: inherit;
+
+  & p {
+    font-family: "Orbitron", serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+nav {
+  width: 100%;
+
+  & img {
+    height: 2.8rem;
+  }
+
+  & a p {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  & ul {
+    display: flex;
+    margin-top: 0.8rem;
+    gap: 1.5rem;
+  }
+
+  & li {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  & a {
+    position: relative;
+    gap: 0.7rem;
+  }
+
+  & a,
+  a:after,
+  a:before {
+    transition: all 0.5s;
+  }
+
+  & a:hover {
+    color: #f4581e;
+  }
+
+  & a:after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: #f7f7f7;
+    height: 1px;
+  }
+
+  & a:hover:after {
+    width: 100%;
+  }
+}
+
+footer {
+  /* position: fixed;
+  bottom: 0; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: inherit;
+
+  & p {
+    font-family: "Zain", serif;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 300;
+  }
+}
