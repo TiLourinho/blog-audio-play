@@ -1,11 +1,11 @@
 <%- include("partials/header") %>
-  <main class="d-flex flex-column justify-content-center align-items-center w-50">
+  <main>
     <% locals.posts.forEach(({ title, id }) => { %>
-      <div class=" card m-2 w-75">
-        <div class="d-flex flex-row justify-content-between align-items-center card-body">
-          <p class="m-0"><%= title %></p>
+      <div>
+        <div>
+          <p><%= title %></p>
           <a href="/post/<%= id %>">
-            <button class="btn btn-outline-light btn-sm" type="button">Read</button>
+            <button type="button">Read</button>
           </a>
         </div>
       </div>

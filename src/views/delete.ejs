@@ -1,16 +1,16 @@
 <%- include("partials/header") %>
-  <main class="d-flex flex-column justify-content-center align-items-center w-75">
-    <form class="w-auto" action="/delete" method="POST">
+  <main>
+    <form action="/delete" method="POST">
       <input type="hidden" name="id" value="<%= post.id %>">
-      <div class="d-flex flex-column justify-content-center align-items-center gap-3">
-        <p class="m-0"><%= post.title %></p>
-        <p class="m-0"><%= post.content %></p>
+      <div>
+        <p><%= post.title %></p>
+        <p><%= post.content %></p>
       </div>
-      <p class="text-center mt-5">Are you sure you want to remove this post?</p>
-      <div class="d-flex flex-row justify-content-center align-items-center mt-4 gap-3">
-        <button class="btn btn-danger" type="submit">Yes</button>
+      <p>Are you sure you want to remove this post?</p>
+      <div>
+        <button type="submit">Yes</button>
         <a href="/post/<%= post.id %>">
-          <button class="btn btn-light" type="button">No</button>
+          <button type="button">No</button>
         </a>
       </div>
     </form>
