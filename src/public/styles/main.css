@@ -9,24 +9,18 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #fe0072;
-  background: radial-gradient(
-    circle,
-    #fe0072 0%,
-    #a90258 0%,
-    #47053a 60%,
-    #12062a 100%
-  );
+  justify-content: space-between;
+  background: radial-gradient(circle, #a90258 0%, #47053a 60%, #12062a 100%);
+  background-blend-mode: overlay;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   color: #f7f7f7;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 1.5;
   margin-left: 25vw;
   margin-right: 25vw;
-  height: 100vh;
+  min-height: 100vh;
   width: 50vw;
 }
 
@@ -61,15 +55,21 @@ button {
 }
 
 .create {
-  margin-top: 115px;
-  height: 100vh;
+  margin: auto 0;
   width: inherit;
 
-  & p {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    font-size: 1.8rem;
-    font-weight: 400;
+  & .presentation-title {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  & .presentation {
+    font-size: 1.125rem;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 25px;
   }
 
   & form {
@@ -91,6 +91,7 @@ button {
     & input,
     textarea {
       border: none;
+      box-shadow: 1px 1px 2px 0 #12062a inset;
       font-size: 1rem;
       padding: 0.5rem;
       height: 2rem;
@@ -100,6 +101,7 @@ button {
     & button {
       border: none;
       border-radius: 1.5rem;
+      box-shadow: 1px 1px 2px 0 #12062a;
       background: #f7f7f7;
       font-size: 0.9rem;
       font-weight: 400;
@@ -113,5 +115,82 @@ button {
       box-shadow: 2px 2px 2px 0 #12062a;
       color: #f7f7f7;
     }
+  }
+}
+
+.home {
+  margin-top: 35px;
+  margin-bottom: 70px;
+  width: inherit;
+
+  & p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  & .presentation {
+    font-size: 1.125rem;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 45px;
+  }
+
+  & .card {
+    background-color: #fe007220;
+    margin: 6px 0;
+    padding: 20px 30px;
+    height: 220px;
+    width: inherit;
+  }
+
+  & .card > div {
+    height: 180px;
+  }
+
+  & img {
+    box-shadow: 3px 3px 6px 0 #12062a40;
+    margin-right: 20px;
+    height: 180px;
+    width: 180px;
+  }
+
+  & .album-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+
+  & .artist {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 200;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  & .description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    text-justify: inter-word;
+    height: 78px;
+  }
+
+  & a {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+  }
+
+  & button {
+    color: #f7f7f7;
+    transition: 0.5s;
+  }
+
+  & button:hover {
+    color: #ff5734;
   }
 }

@@ -1,6 +1,11 @@
 <%- include("partials/header") %>
   <main class="container-column create">
-    <p>Create Post</p>
+    <p class="presentation-title">"Share Your Thoughts on Music!"</p>
+    <p class="presentation">
+      Got an album that left an impression on you? Write a review and let the world know what makes it special.
+      Whether it’s a masterpiece, a hidden gem, or just something that caught your ear, your words can help others discover great music.
+      Start writing and share your passion!
+    </p>
     <form action="/" method="POST">
       <input type="hidden" name="id" value="<%= uid %>" />
       <div>
@@ -17,15 +22,15 @@
       </div>
       <div>
         <div>
-          <label for="url">image</label>
+          <label for="coverUrl">image</label>
         </div>
-        <input type="text" name="url" id="url" minlength="2" autofocus required />
+        <input type="text" name="coverUrl" id="coverUrl" minlength="2" autofocus required />
       </div>
       <div>
         <div>
-          <label for="content">description</label>
+          <label for="description">description</label>
         </div>
-        <textarea name="content" id="content" minlength="2" style="height: 100px" required></textarea>
+        <textarea name="description" id="description" minlength="2" style="height: 100px" required></textarea>
       </div>
       <div>
         <button type="submit">Submit</button>

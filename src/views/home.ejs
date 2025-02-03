@@ -1,9 +1,21 @@
 <%- include("partials/header") %>
-  <main>
-    <% locals.posts.forEach(({ title, id }) => { %>
-      <div>
+  <main class="container-column home">
+    <p class="presentation">Welcome to Audio Play!
+      If you're passionate about music, you've come to the right place. This blog is my personal space to share reviews
+      of albums that I love—whether they're timeless classics or hidden gems.
+      I don’t just rate albums; I explore their sound, lyrics, and impact, sharing what makes each one special to me.
+      Whether you're looking for recommendations or just want to rediscover great music,
+      I hope you’ll find something here that resonates with you.
+      Feel free to dive in and enjoy the music!</p>
+    <% locals.posts.forEach(({ id, artist, title, coverUrl, description }) => { %>
+      <div class="container-row card">
         <div>
-          <p><%= title %></p>
+          <img src="<%= coverUrl %>" alt="<%= title %> album cover" />
+        </div>
+        <div>
+          <p class="album-title"><%= title %></p>
+          <p class="artist"><%= artist %></p>
+          <p class="description"><%= description %></p>
           <a href="/post/<%= id %>">
             <button type="button">Read</button>
           </a>
