@@ -336,3 +336,85 @@ button {
     }
   }
 }
+
+.delete {
+  margin: auto 0;
+  margin-top: 35px;
+
+  & .delete-post {
+    background-color: #12062a60;
+    border: 3px solid #f7f7f7 inset;
+    box-shadow: 2px 2px 2px 0 #12062a40 inset;
+    padding: 60px 50px;
+    margin-bottom: 40px;
+  }
+
+  & img {
+    box-shadow: 3px 3px 6px 0 #12062a40;
+    margin-bottom: 20px;
+    height: 400px;
+    width: 400px;
+  }
+
+  & .delete-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
+
+  & .delete-artist {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 200;
+    margin-top: -15px;
+    margin-bottom: 20px;
+  }
+
+  & .delete-description {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  & p {
+    font-size: 1.125rem;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  & .container-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 110px;
+    width: 50%;
+  }
+
+  & button {
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 2px 0 #12062a;
+    background: #f7f7f7;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    width: 110.25px;
+    transition: all 0.5s;
+  }
+
+  & button:hover {
+    box-shadow: 2px 2px 2px 0 #12062a;
+    color: #f7f7f7;
+    font-weight: 600;
+  }
+
+  & .yes-button:hover {
+    background: #ca0303;
+  }
+
+  & .no-button:hover {
+    background: #ff5734;
+  }
+}

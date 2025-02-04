@@ -1,16 +1,18 @@
 <%- include("partials/header") %>
-  <main>
-    <form action="/delete" method="POST">
+  <main class="container-column delete">
+    <form class="container-column" action="/delete" method="POST">
       <input type="hidden" name="id" value="<%= post.id %>">
-      <div>
-        <p><%= post.title %></p>
-        <p><%= post.content %></p>
+      <div class="container-column delete-post">
+        <img src="<%= post.coverUrl %>" alt="<%= post.title %> album cover">
+        <p class="delete-title"><%= post.title %></p>
+        <p class="delete-artist"><%= post.artist %></p>
+        <p class="delete-description"><%= post.description %></p>
       </div>
       <p>Are you sure you want to remove this post?</p>
-      <div>
-        <button type="submit">Yes</button>
+      <div class="container-buttons">
+        <button class="yes-button" type="submit">Yes</button>
         <a href="/post/<%= post.id %>">
-          <button type="button">No</button>
+          <button class="no-button" type="button">No</button>
         </a>
       </div>
     </form>
