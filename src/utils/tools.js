@@ -53,7 +53,7 @@ export function readPost(path) {
 export function viewPost(req, res) {
   const postId = req.params.id;
   const allPosts = res.locals.posts;
-  const post = allPosts.filter(({ id }) => id === Number(postId));
+  const post = allPosts.filter(({ id }) => id === postId);
   const data = {
     post: post[0],
   };
@@ -71,7 +71,7 @@ export function updatePost(path, body) {
     }
 
     parsedData.map((item) => {
-      if (item.id === Number(body.id)) {
+      if (item.id === body.id) {
         item.id = item.id;
         item.title = body.title;
         item.content = body.content;
@@ -100,7 +100,7 @@ export function removePost(path, body) {
       return;
     }
 
-    const reducedData = parsedData.filter(({ id }) => id !== Number(body.id));
+    const reducedData = parsedData.filter(({ id }) => id !== body.id);
 
     const updatedData = [...reducedData];
     const stringfiedData = JSON.stringify(updatedData, null, 2);

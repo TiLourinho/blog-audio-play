@@ -1,18 +1,18 @@
 <%- include("partials/header") %>
-  <main>
-    <div>
-      <div>
-        <p><%= post.title %></p>
-        <p><%= post.content %></p>
-      </div>
-      <div>
-        <a href="/update/<%= post.id %>">
-          <button type="button">Edit</button>
-        </a>
-        <a href="/delete/<%= post.id %>">
-          <button type="button">Delete</button>
-        </a>
-      </div>
+  <main class="container-column post">
+    <div class="container-column">
+      <img src="<%= post.coverUrl %>" alt="<%= post.title %> album cover">
+      <p class="post-title"><%= post.title %></p>
+      <p class="post-artist"><%= post.artist %></p>
+      <p class="post-description"><%= post.description %></p>
+    </div>
+    <div class="container-buttons">
+      <a href="/update/<%= post.id %>">
+        <button class="edit-button" type="button">Edit</button>
+      </a>
+      <a href="/delete/<%= post.id %>">
+        <button class="delete-button" type="button">Delete</button>
+      </a>
     </div>
   </main>
 <%- include("partials/footer") %>

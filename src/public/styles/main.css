@@ -9,12 +9,10 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background: radial-gradient(circle, #a90258 0%, #47053a 60%, #12062a 100%);
-  background-blend-mode: overlay;
   background-attachment: fixed;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
   color: #f7f7f7;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 1.5;
@@ -107,13 +105,15 @@ button {
       font-weight: 400;
       margin-top: 1rem;
       padding: 1rem 2rem;
-      transition: 0.5s;
+      width: 110.25px;
+      transition: all 0.5s;
     }
 
     & button:hover {
-      background: linear-gradient(#ff5734, #fe0072);
+      background: #ff5734;
       box-shadow: 2px 2px 2px 0 #12062a;
       color: #f7f7f7;
+      font-weight: 600;
     }
   }
 }
@@ -171,9 +171,9 @@ button {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     line-height: 1.2;
     overflow: hidden;
-    text-overflow: ellipsis;
     text-align: justify;
     text-justify: inter-word;
     height: 78px;
@@ -192,5 +192,74 @@ button {
 
   & button:hover {
     color: #ff5734;
+  }
+}
+
+.post {
+  margin: auto 0;
+  margin-top: 35px;
+
+  & img {
+    box-shadow: 3px 3px 6px 0 #12062a40;
+    margin-bottom: 20px;
+    height: 400px;
+    width: 400px;
+  }
+
+  & .post-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
+
+  & .post-artist {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 200;
+    margin-top: -15px;
+    margin-bottom: 20px;
+  }
+
+  & .post-description {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 35px;
+  }
+
+  & .container-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 110px;
+    width: 50%;
+  }
+
+  & button {
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 2px 0 #12062a;
+    background: #f7f7f7;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    width: 110.25px;
+    transition: all 0.5s;
+  }
+
+  & button:hover {
+    box-shadow: 2px 2px 2px 0 #12062a;
+    color: #f7f7f7;
+    font-weight: 600;
+  }
+
+  & .edit-button:hover {
+    background: #ff5734;
+  }
+
+  & .delete-button:hover {
+    background: #ca0303;
   }
 }
