@@ -73,8 +73,10 @@ export function updatePost(path, body) {
     parsedData.map((item) => {
       if (item.id === body.id) {
         item.id = item.id;
+        item.artist = body.artist;
         item.title = body.title;
-        item.content = body.content;
+        item.coverUrl = body.coverUrl;
+        item.description = body.description;
       }
     });
 

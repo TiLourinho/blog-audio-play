@@ -67,7 +67,7 @@ button {
     font-size: 1.125rem;
     text-align: justify;
     text-justify: inter-word;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
   }
 
   & form {
@@ -94,6 +94,10 @@ button {
       padding: 0.5rem;
       height: 2rem;
       width: 450px;
+    }
+
+    & textarea {
+      height: 8rem;
     }
 
     & button {
@@ -261,5 +265,74 @@ button {
 
   & .delete-button:hover {
     background: #ca0303;
+  }
+}
+
+.edit {
+  margin: auto 0;
+
+  & .edit-title {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  & .edit-presentation {
+    font-size: 1.125rem;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 10px;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 0.8rem;
+    width: 60%;
+
+    & label {
+      font-family: "Zain", serif;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    & input,
+    textarea {
+      border: none;
+      box-shadow: 1px 1px 2px 0 #12062a inset;
+      font-size: 1rem;
+      padding: 0.5rem;
+      height: 2rem;
+      width: 450px;
+    }
+
+    & textarea {
+      height: 8rem;
+    }
+
+    & button {
+      border: none;
+      border-radius: 1.5rem;
+      box-shadow: 1px 1px 2px 0 #12062a;
+      background: #f7f7f7;
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      width: 110.25px;
+      transition: all 0.5s;
+    }
+
+    & button:hover {
+      background: #ff5734;
+      box-shadow: 2px 2px 2px 0 #12062a;
+      color: #f7f7f7;
+      font-weight: 600;
+    }
   }
 }

@@ -1,18 +1,40 @@
 <%- include("partials/header") %>
-  <main>
-    <p>Edit Post</p>
+  <main class="container-column edit">
+    <p class="edit-title">"Fine-Tune Your Review!"</p>
+    <p class="edit-presentation">
+      Want to add more thoughts, refine your insights, or correct a detail?
+      This is your chance to perfect your review and make it even better.
+      Every word counts when sharing your passion for music!
+      Edit, refine, and keep the music alive!
+    </p>
     <form action="/update" method="POST">
+      <input type="hidden" name="id" value="<%= post.id %>" />
       <div>
-        <input type="hidden" name="id" value="<%= post.id %>">
-        <label for="title">title</label>
-        <input type="text" name="title" id="title" value="<%= post.title %>" minlength="2" maxlength="45" autofocus required />
+        <div>
+          <label for="artist">artist</label>
+        </div>
+        <input type="text" name="artist" id="artist" value="<%= post.artist %>" minlength="2" maxlength="45" autofocus required />
       </div>
       <div>
-        <label for="content">content</label>
-        <textarea name="content" id="content" style="height: 100px" required><%= post.content %></textarea>
+        <div>
+          <label for="title">album title</label>
+        </div>
+        <input type="text" name="title" id="title" value="<%= post.title %>" minlength="2" maxlength="45" required />
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <div>
+          <label for="coverUrl">image</label>
+        </div>
+        <input type="text" name="coverUrl" id="coverUrl" value="<%= post.coverUrl %>" minlength="2" required />
+      </div>
+      <div>
+        <div>
+          <label for="description">description</label>
+        </div>
+        <textarea name="description" id="description" minlength="2" required><%= post.description %></textarea>
+      </div>
+      <div>
+        <button type="submit">Update</button>
       </div>
     </form>
   </main>
