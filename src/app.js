@@ -7,6 +7,8 @@ import {
   savePost,
   updatePost,
   removePost,
+  paginatePosts,
+  changePage,
 } from "./utils/tools.js";
 import { createPost } from "./middlewares/createPost.js";
 import { findPost } from "./middlewares/findPost.js";
@@ -22,15 +24,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(createPost);
 app.use(findPost);
 
-app.get("/", (_req, res) => {
-  res.render("home");
-});
-
 app.post("/", (req, res) => {
   const post = req.body;
 
   savePost(POSTS_PATH, post);
-  res.redirect("/");
+  res.redirect("/1");
 });
 
 app.get("/create", (_req, res) => {
@@ -55,7 +53,7 @@ app.post("/update", (req, res) => {
   const post = req.body;
 
   updatePost(POSTS_PATH, post);
-  res.redirect("/");
+  res.redirect("/1");
 });
 
 app.get("/delete/:id", (req, res) => {
@@ -68,7 +66,17 @@ app.post("/delete", (req, res) => {
   const post = req.body;
 
   removePost(POSTS_PATH, post);
-  res.redirect("/");
+  res.redirect("/1");
+});
+
+app.get("/:id", (req, res) => {
+  const data = {
+    page: req.params.id,
+    changePage,
+    paginatePosts,
+  };
+
+  res.render("home", data);
 });
 
 app.listen(PORT, (err) => serverStart(err, PORT));

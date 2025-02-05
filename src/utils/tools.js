@@ -116,3 +116,27 @@ export function removePost(path, body) {
     });
   });
 }
+
+export function paginatePosts(index, page, totalPosts) {
+  const pageNumber = Number(page);
+  const postsPerPage = 5;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+
+  if (pageNumber < 1 || pageNumber > totalPages) return false;
+
+  const startIndex = (pageNumber - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+
+  return index >= startIndex && index < endIndex;
+}
+
+export function changePage(page, direction, totalPosts) {
+  const pageNumber = Number(page);
+  const postsPerPage = 5;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+
+  if (direction === "up" && pageNumber < totalPages) return pageNumber + 1;
+  if (direction === "down" && pageNumber > 1) return pageNumber - 1;
+
+  return pageNumber;
+}
