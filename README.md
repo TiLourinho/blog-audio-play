@@ -1,29 +1,62 @@
 <p align="center">
-  <img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:60/https://www.filepicker.io/api/file/i9apvRTRQuSkbe13KrtM" alt="The App Brewery brand logo" />
+  <img src="./src/public/images/repo/audio-play-logo.png" alt="Audio Play brand logo" />
 </p>
 
-# Capstone Project - Blog
+<p align="center">
+ <a href="#funcionalidades">Funcionalidades</a> •
+ <a href="#demonstração">Demonstração</a> • 
+ <a href="#como-executar">Como executar</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#autoria">Autoria</a>
+</p><br>
 
-The goal of this project is to create a Blog web application using Node.js, Express, and EJS. The application will allow users to create and view blog posts. Posts will not persist between sessions as no database will be used in this version of the application.
+# Audio Play
 
-## Deliverables
+O projeto é um blog de reviews de álbuns. Compartilhar as opiniões do usuário sobre discos que ele curte. Cada post inclui o nome do álbum, capa, artista e uma análise pessoal permitindo a quem acessa ter a oportunidade de conhecer músicas novas de diferentes estilos e artistas.
 
-- One Node.js project for the function of the website;
-- Including at least one EJS file for the structure of the website;
-- Including at least one CSS file for the styling of the website.
+## Funcionalidades
 
-## Features
+- Visualizar a lista de posts paginada em cinco posts por página;
+- Visualizar os detalhes de um post específico;
+- Inserir um novo post com nome do artista, nome do álbum, capa e uma descrição;
+- Editar um post podendo alterar qualquer uma de suas características;
+- Remover um post não desejado.
 
-1. **Post Creation**: Users should be able to create new posts;
-2. **Post Viewing**: The home page should allow the user to view all their posts;
-3. **Post Update/Delete**: Users should be edit and delete posts as needed;
-4. **Styling**: The application should be well-styled and responsive, ensuring a good user experience on both desktop and mobile devices.
+## Demonstração
 
-## Technical Requirements
+<p align="center">
+  <img src="./src/public/images/repo/home.png" alt="Audio Play home page" />
+  <em>Home</em>
+</p>
 
-1. **Node.js & Express**: The application will be a web server built using Node.js and Express. Express will handle routing and middleware;
-2. **EJS**: EJS will be used as the templating engine to generate dynamic HTML based on the application's state.
+<p align="center">
+  <img src="./src/public/images/repo/pages.png" alt="Audio Play various pages" />
+  <em>View, Create, Edit e Delete</em>
+</p>
 
-## Example
+## Como executar
 
-http://www.paulgraham.com/articles.html
+```Bash
+# Clone este repositório
+$ https://github.com/TiLourinho/blog-audio-play
+
+# Instale as dependências
+$ npm install
+
+# Inicie o servidor
+$ npm start
+```
+
+O projeto estará rodando no endereço http://localhost:3000/1
+
+## Tecnologias
+
+- [Node.js](https://nodejs.org/pt)
+- [Express](https://expressjs.com/pt-br/)
+- [EJS](https://ejs.co/)
+
+## Autoria
+
+Tiago Lourinho
+
+[![Gmail Badge](https://img.shields.io/badge/-lourinho.tiago@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lourinho.tiago@gmail.com)](mailto:lourinho.tiago@gmail.com)
