@@ -62,13 +62,6 @@ app.get("/delete/:id", (req, res) => {
   res.render("delete", data);
 });
 
-app.post("/delete", (req, res) => {
-  const post = req.body;
-
-  removePost(POSTS_PATH, post);
-  res.redirect("/1");
-});
-
 app.get("/:id", (req, res) => {
   const data = {
     page: req.params.id,
@@ -77,6 +70,13 @@ app.get("/:id", (req, res) => {
   };
 
   res.render("home", data);
+});
+
+app.post("/delete", (req, res) => {
+  const post = req.body;
+
+  removePost(POSTS_PATH, post);
+  res.redirect("/1");
 });
 
 app.listen(PORT, (err) => serverStart(err, PORT));
